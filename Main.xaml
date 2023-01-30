@@ -185,7 +185,7 @@
                           </Sequence>
                         </ui:CommentOut.Body>
                       </ui:CommentOut>
-                      <ui:Matches sap:VirtualizedContainerService.HintSize="436,59" sap2010:WorkflowViewState.IdRef="Matches_2" Input="[CurrentRow.Item(0).ToString]" IsBuilderTabModified="False" Pattern=".*" RegexOption="IgnoreCase, Compiled" Result="[ein_MyRegexMatch]" />
+                      <ui:Matches sap:VirtualizedContainerService.HintSize="436,59" sap2010:WorkflowViewState.IdRef="Matches_2" Input="[CurrentRow.Item(0).ToString]" IsBuilderTabModified="False" Pattern="\d.\d*" RegexOption="IgnoreCase, Compiled" Result="[ein_MyRegexMatch]" />
                       <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="436,61" sap2010:WorkflowViewState.IdRef="WriteLine_6" Text="[ein_MyRegexMatch(0).Value.ToString]" />
                       <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{ein_MyRegexMatch(0).Value.ToString}]" DataTable="[dtOutput]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="436,185" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
                     </Sequence>
