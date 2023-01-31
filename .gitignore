@@ -1,0 +1,7 @@
+# Files to be ignored.
+*.gif
+PDFS/
+*.tmh/
+*.settings/
+RECEIPT FLOW-Copy*
+*Recover
