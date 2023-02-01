@@ -1014,7 +1014,7 @@
           <av:Size x:Key="ShapeSize">200,66</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Add Regex Multi Row" sap:VirtualizedContainerService.HintSize="634,2876" sap2010:WorkflowViewState.IdRef="Sequence_74">
+      <Sequence DisplayName="Add Regex Multi Row" sap:VirtualizedContainerService.HintSize="634,2976" sap2010:WorkflowViewState.IdRef="Sequence_74">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1044,32 +1044,37 @@
             </ActivityAction>
           </ui:ExcelApplicationScope.Body>
         </ui:ExcelApplicationScope>
-        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_MadeForDataRow]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="592,1479" sap2010:WorkflowViewState.IdRef="ForEachRow_17">
+        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_MadeForDataRow]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="592,1579" sap2010:WorkflowViewState.IdRef="ForEachRow_17">
           <ui:ForEachRow.Body>
             <ActivityAction x:TypeArguments="sd:DataRow">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
               </ActivityAction.Argument>
-              <Sequence sap:VirtualizedContainerService.HintSize="558,1364" sap2010:WorkflowViewState.IdRef="Sequence_67">
+              <Sequence sap:VirtualizedContainerService.HintSize="558,1464" sap2010:WorkflowViewState.IdRef="Sequence_67">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="516,61" sap2010:WorkflowViewState.IdRef="WriteLine_31" Text="[row.item(0).ToString]" />
-                <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_ForRegex]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="516,268" sap2010:WorkflowViewState.IdRef="ForEachRow_20">
+                <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_ForRegex]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="516,368" sap2010:WorkflowViewState.IdRef="ForEachRow_20">
                   <ui:ForEachRow.Body>
                     <ActivityAction x:TypeArguments="sd:DataRow">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="272,153" sap2010:WorkflowViewState.IdRef="Sequence_82">
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="304,253" sap2010:WorkflowViewState.IdRef="Sequence_82">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="230,61" sap2010:WorkflowViewState.IdRef="WriteLine_23" Text="[CurrentRow.item(0).ToString]" />
+                        <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="WriteLine_23" Text="[CurrentRow.item(0).ToString]" />
+                        <Assign sap:VirtualizedContainerService.HintSize="262,60">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Object">[CurrentRow.Item("Value").ToString]</OutArgument>
+                          </Assign.To>
+                        </Assign>
                       </Sequence>
                     </ActivityAction>
                   </ui:ForEachRow.Body>
